@@ -5,7 +5,7 @@ from django.conf.urls import patterns, include, url
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
-from newproj.views import hello, current_datetime, hours_ahead, about
+from newproj.views import hello, current_datetime, hours_ahead, about, display_meta
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
@@ -13,7 +13,9 @@ urlpatterns = patterns('',
     ('^hello/$', hello),
 	('^time/$', current_datetime),
 	('^about/$', about),
-	(r'^time/plus/(\d{1,2})/$', hours_ahead)
+	(r'^time/plus/(\d{1,2})/$', hours_ahead),
+    ('^meta/$', display_meta),
+    
     # Examples:
     # url(r'^$', 'newproj.views.home', name='home'),
     # url(r'^newproj/', include('newproj.foo.urls')),
